@@ -4,8 +4,8 @@ import course_2.exception.QuestionAlreadyAddedException;
 import course_2.exception.QuestionNotFoundException;
 import course_2.exception.QuestionsStorageIsEmptyException;
 import course_2.model.Question;
-import course_2.repository.JavaQuestionRepository;
-import course_2.service.JavaQuestionService;
+import course_2.repository.MathQuestionRepository;
+import course_2.service.MathQuestionService;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -17,12 +17,12 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 
 @ExtendWith(MockitoExtension.class)
-public class JavaQuestionServiceTest {
+public class MathQuestionServiceTest {
 
     @Spy
-    private JavaQuestionRepository repository;
+    private MathQuestionRepository repository;
     @InjectMocks
-    private JavaQuestionService service;
+    private MathQuestionService service;
 
     @BeforeEach
     public void beforeEach() {
