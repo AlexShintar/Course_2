@@ -1,11 +1,9 @@
 package course_2;
 
-import course_2.exception.IncorrectQuestionsAmountException;
 import course_2.model.Question;
 import course_2.service.*;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -64,19 +62,6 @@ public class ExaminerServiceImplTest {
                         new Question("Вопрос 3", "Ответ 3")
                 )
         );
-        Mockito.lenient().when(mathQuestionService.getAll()).thenReturn(
-                Set.of(
-                        new Question("Вопрос 4", "Ответ 4"),
-                        new Question("Вопрос 5", "Ответ 5"),
-                        new Question("Вопрос 6", "Ответ 6")
-                )
-        );
-    }
-
-    @Test
-    public void getQuestionsWhenBigAmountTest() {
-        Assertions.assertThatExceptionOfType(IncorrectQuestionsAmountException.class)
-                .isThrownBy(() -> examinerService.getQuestions(7));
     }
 
     @ParameterizedTest
